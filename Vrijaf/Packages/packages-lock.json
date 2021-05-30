@@ -32,6 +32,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.inputsystem": {
       "version": "1.0.2",
       "depth": 1,
@@ -42,6 +43,11 @@
     "com.unity.subsystemregistration": {
       "version": "1.0.6",
       "depth": 1,
+=======
+    "com.unity.terrain-tools": {
+      "version": "3.0.2-preview.3",
+      "depth": 0,
+>>>>>>> e5a59d7c65d2a100cd1eb6fffef57f9eaf158043
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
