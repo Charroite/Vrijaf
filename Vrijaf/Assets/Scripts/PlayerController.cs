@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Range(0.0f, 0.5f)] float moveSmoothTime = 0.3f;
     [SerializeField] [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
 
-
+private Renderer renderer;
     private bool isCrouching = false;
 
     [SerializeField] private bool lockCursor = true;
@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
 
     Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
-
+    RaycastHit hit; 
+    GameObject grabbedOBJ;
+    public Transform grabPos;
 
     void Start()
     {
@@ -65,6 +67,22 @@ public class PlayerController : MonoBehaviour
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
+
+        // pickup rigidbody gameobjects with mouseclicks
+        if(Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position,transform.forward,out hit, 5) && hit.transform.GetComponent<Rigidbody>())
+        {
+            grabbedOBJ = hit.transform.gameObject;
+        }
+        
+        else if(Input.GetMouseButtonUp(0))
+        {
+            grabbedOBJ = null;
+        }
+        
+        if(grabbedOBJ)
+        {
+            grabbedOBJ.GetComponent<Rigidbody>().velocity = 10 * (grabPos.position - grabbedOBJ.transform.position);
+        }
 
     }
 
