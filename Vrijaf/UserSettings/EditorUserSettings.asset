@@ -5,51 +5,6 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
-    RecentlyUsedScenePath-0:
-<<<<<<< HEAD
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf47517353e0ac93d0a2a002ceb441c05ff1f13
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf4750f30380cea28052c1819e00f0c09ff0e441e1f07e917
-      flags: 0
-    RecentlyUsedScenePath-2:
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf4750a321c03fd280c32180df70e471ef8021e12
-      flags: 0
-    RecentlyUsedScenePath-3:
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf4751b3d202be1080c3b2233fd1f0d18b81e04020517
-      flags: 0
-    RecentlyUsedScenePath-4:
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf4751c3d2a17ee30203f1871e704001fef
-      flags: 0
-    RecentlyUsedScenePath-5:
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf4751c303617eb2529311331fb040e45e305031f08
-      flags: 0
-    RecentlyUsedScenePath-6:
-      value: 224247031146466806173f27022a5a5030051d2f2e21237f08311c3ef2ec310be1e238ecf4751b3d2b09dc280b2c0c71e704001fef
-      flags: 0
-    RecentlyUsedScenePath-7:
-      value: 224247031146466e011a052f11375a504747581a203d35701e211c37e7f22777d1e433e7e229700e3c14e63913701431fb1e10
-      flags: 0
-    RecentlyUsedScenePath-8:
-      value: 22424703114646680e0b0227036c692256233d19186815130807387df7ee3d2cfb
-      flags: 0
-    RecentlyUsedScenePath-9:
-=======
-      value: 22424703114646700c1d186c052d56040f
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 22424703114646680e0b0227036c6b111012143e292628393e67083debf42d
-      flags: 0
-    RecentlyUsedScenePath-2:
->>>>>>> e5a59d7c65d2a100cd1eb6fffef57f9eaf158043
-      value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
-      flags: 0
-    RecentlyUsedScenePath-3:
-      value: 22424703114646680e0b0227036c691504162b2b21382a35633c133af6f9
-      flags: 0
-    RecentlyUsedScenePath-4:
-      value: 224247031146466806170e2d086c6c1313191d6521292f3e1e2a183de7ae2136ebf32f
-      flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
