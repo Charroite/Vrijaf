@@ -67,23 +67,6 @@ private Renderer renderer;
         playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
-
-        // pickup rigidbody gameobjects with mouseclicks
-        if(Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position,transform.forward,out hit, 5) && hit.transform.GetComponent<Rigidbody>())
-        {
-            grabbedOBJ = hit.transform.gameObject;
-        }
-        
-        else if(Input.GetMouseButtonUp(0))
-        {
-            grabbedOBJ = null;
-        }
-        
-        if(grabbedOBJ)
-        {
-            grabbedOBJ.GetComponent<Rigidbody>().velocity = 10 * (grabPos.position - grabbedOBJ.transform.position);
-        }
-
     }
 
     void UpdateMovement()

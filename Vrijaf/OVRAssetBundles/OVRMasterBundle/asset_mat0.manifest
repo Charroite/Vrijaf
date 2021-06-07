@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 286603263
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d5f22200d08e5c7650a0fba2f1063ca0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5651999fa58938ac55fc849c3d2539bc
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Models/Teleport Models/New Material.mat
+- Assets/Models/New Material 1.mat
+- Assets/Models/New Material.mat
+Dependencies: []
