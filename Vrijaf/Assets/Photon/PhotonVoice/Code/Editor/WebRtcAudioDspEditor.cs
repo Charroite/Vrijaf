@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿#if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX || UNITY_IOS || UNITY_ANDROID
+#define WEBRTC_AUDIO_DSP_SUPPORTED_PLATFORMS
+#endif
+
+#if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX
+#define WEBRTC_AUDIO_DSP_SUPPORTED_EDITOR
+#endif
+
+using Photon.Realtime;
+using UnityEngine;
 
 namespace Photon.Voice.Unity.Editor
 {
@@ -39,7 +48,17 @@ namespace Photon.Voice.Unity.Editor
         public override void OnInspectorGUI()
         {
             this.serializedObject.UpdateIfRequiredOrScript();
-
+            if (!PhotonEditorUtils.IsPrefab(this.processor.gameObject))
+            {
+                #if WEBRTC_AUDIO_DSP_SUPPORTED_PLATFORMS
+                #elif WEBRTC_AUDIO_DSP_SUPPORTED_EDITOR
+                string message = string.Format("WebRtcAudioDsp is not supported on this target platform {0}. The component will be disabled in build.", EditorUserBuildSettings.activeBuildTarget);
+                EditorGUILayout.HelpBox(message, MessageType.Warning);
+                #else
+                string message = string.Format("WebRtcAudioDsp is not supported on this target platform {0}. This component is disabled.", EditorUserBuildSettings.activeBuildTarget);
+                EditorGUILayout.HelpBox(message, MessageType.Warning);
+                #endif
+            }
             if (!this.processor.enabled)
             {
                 EditorGUILayout.HelpBox("WebRtcAudioDsp is disabled and will not be used.", MessageType.Warning);
@@ -51,7 +70,8 @@ namespace Photon.Voice.Unity.Editor
             VoiceLogger.ExposeLogLevel(this.serializedObject, this.processor);
             bool bypassed;
             EditorGUI.BeginChangeCheck();
-            if (PhotonVoiceEditorUtils.IsInTheSceneInPlayMode(this.processor.gameObject))
+            bool isInSceneInPlayMode = PhotonVoiceEditorUtils.IsInTheSceneInPlayMode(this.processor.gameObject);
+            if (isInSceneInPlayMode)
             {
                 this.processor.Bypass = EditorGUILayout.Toggle(new GUIContent("Bypass", "Bypass WebRTC Audio DSP"), this.processor.Bypass);
                 bypassed = this.processor.Bypass;
@@ -64,7 +84,7 @@ namespace Photon.Voice.Unity.Editor
 
             if (!bypassed)
             {
-                if (PhotonVoiceEditorUtils.IsInTheSceneInPlayMode(this.processor.gameObject))
+                if (isInSceneInPlayMode)
                 {
                     this.processor.AEC = EditorGUILayout.Toggle(new GUIContent("AEC", "Acoustic Echo Cancellation"), this.processor.AEC);
                     if (this.processor.AEC)
