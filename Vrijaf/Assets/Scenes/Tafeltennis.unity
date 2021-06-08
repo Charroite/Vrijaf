@@ -1180,6 +1180,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1245372222432332308, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245372222649573826, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245372222763687490, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6377509252596607314, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
       propertyPath: m_Name
       value: Table Tennis
@@ -1227,6 +1239,14 @@ PrefabInstance:
     - target: {fileID: 6377509252596607315, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270479588248425308, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270479589175416712, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
+      propertyPath: sceneViewId
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a3d10be2796234e80abced41e11c0c, type: 3}
