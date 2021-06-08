@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 3540113696
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 109852ef6f968f6629009d282bb43a6a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9b893e988176176a3edd7788e220fb20
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Models/VR Controller Models/quest2_contollers_div0_left.fbx
+- Assets/Models/VR Controller Models/quest2_contollers_div0_right.fbx
+Dependencies: []
