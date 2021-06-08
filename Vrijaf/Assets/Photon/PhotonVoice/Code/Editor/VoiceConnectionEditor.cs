@@ -30,6 +30,13 @@ namespace Photon.Voice.Unity.Editor
         private SerializedProperty globalRecordersLogLevelSp;
         private SerializedProperty globalSpeakersLogLevelSp;
         private SerializedProperty globalPlayDelaySettingsSp;
+        
+        private const string notAvailable = "N/A?";
+        protected string photonLibraryVersion;
+        protected string photonVoiceVersion;
+        protected string punChangelogVersion;
+        protected string photonVoiceApiVersion;
+        protected bool versionFoldout;
 
         protected virtual void OnEnable()
         {
@@ -55,10 +62,14 @@ namespace Photon.Voice.Unity.Editor
             this.globalRecordersLogLevelSp = this.serializedObject.FindProperty("globalRecordersLogLevel");
             this.globalSpeakersLogLevelSp = this.serializedObject.FindProperty("globalSpeakersLogLevel");
             this.globalPlayDelaySettingsSp = this.serializedObject.FindProperty("globalPlaybackDelaySettings");
+
+            PhotonVoiceEditorUtils.GetPhotonVoiceVersionsFromChangeLog(out this.photonVoiceVersion, out this.punChangelogVersion, out this.photonVoiceApiVersion);
+            this.photonLibraryVersion = System.Reflection.Assembly.GetAssembly(typeof(ExitGames.Client.Photon.PhotonPeer)).GetName().Version.ToString();
         }
 
         public override void OnInspectorGUI()
         {
+            this.ShowHeader();
             this.serializedObject.UpdateIfRequiredOrScript();
 
             VoiceLogger.ExposeLogLevel(this.serializedObject, this.connection);
@@ -420,6 +431,38 @@ namespace Photon.Voice.Unity.Editor
 
                 #endregion Best Region Box
             }
+        }
+
+        protected virtual void ShowHeader()
+        {
+            this.ShowAssetVersionsFoldout();
+        }
+
+        protected virtual void ShowAssetVersions()
+        {
+            EditorGUILayout.LabelField(string.Format("Photon Voice: {0}", this.GetVersionString(this.photonVoiceVersion)));
+            EditorGUILayout.LabelField(string.Format("Photon Voice API: {0}", this.GetVersionString(this.photonVoiceApiVersion)));
+            EditorGUILayout.LabelField(string.Format("Photon Realtime and Unity Library: {0}", this.GetVersionString(this.photonLibraryVersion)));
+        }
+
+        private void ShowAssetVersionsFoldout()
+        {
+            EditorGUI.indentLevel++;
+            this.versionFoldout = EditorGUILayout.Foldout(this.versionFoldout, "Asset Version Info");
+            if (this.versionFoldout)
+            {
+                EditorGUI.indentLevel++;
+                EditorGUILayout.BeginVertical();
+                this.ShowAssetVersions();
+                EditorGUILayout.EndVertical();
+                EditorGUI.indentLevel--;
+            }
+            EditorGUI.indentLevel--;
+        }
+
+        protected string GetVersionString(string versionString)
+        {
+            return string.IsNullOrEmpty(versionString) ? notAvailable : versionString;
         }
     }
 }
