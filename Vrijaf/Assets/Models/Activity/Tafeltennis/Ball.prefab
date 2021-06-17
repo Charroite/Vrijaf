@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1496399915378905691}
   - component: {fileID: 5316786951638949384}
   - component: {fileID: 3181843169493151052}
+  - component: {fileID: 1575183100961481267}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -260,3 +261,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &1575183100961481267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291743089180749407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34be0b34b3822dc42a390b7234636a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDefault: {fileID: 0}
+  hitRacket: {fileID: 0}
+  hitDefaultSound: {fileID: 8300000, guid: f40ed9afef5dac043b5707dc4918dee3, type: 3}
+  hitRacketSound: {fileID: 8300000, guid: d86fb03f8c3785e469d406759f72ebe7, type: 3}
