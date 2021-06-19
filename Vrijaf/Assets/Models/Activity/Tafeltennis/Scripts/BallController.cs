@@ -14,12 +14,6 @@ public class BallController : MonoBehaviour
         ball = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
        if(collision.gameObject.name == "Terrain" && !didTouchGround)

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4351770584770508041}
   - component: {fileID: -8295766799969448082}
   m_Layer: 0
-  m_Name: Bat
+  m_Name: PingPongBat
   m_TagString: TennisBat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
