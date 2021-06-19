@@ -24,7 +24,7 @@ public class BallAudioManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Racket")
+        if(collision.gameObject.tag == "TennisBat")
         {
             hitRacket.Play();
         } 
