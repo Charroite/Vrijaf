@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5316786951638949384}
   - component: {fileID: 3181843169493151052}
   - component: {fileID: 1575183100961481267}
+  - component: {fileID: 8626520687940254058}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1291743089180749407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.32, y: 0.119, z: 0.084}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -115,7 +116,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!114 &1496399915378905691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,3 +278,15 @@ MonoBehaviour:
   hitRacket: {fileID: 0}
   hitDefaultSound: {fileID: 8300000, guid: f40ed9afef5dac043b5707dc4918dee3, type: 3}
   hitRacketSound: {fileID: 8300000, guid: d86fb03f8c3785e469d406759f72ebe7, type: 3}
+--- !u!114 &8626520687940254058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291743089180749407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca15052a1c483d4cb7337189d3b5331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
