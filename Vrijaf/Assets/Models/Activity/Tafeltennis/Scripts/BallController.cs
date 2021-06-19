@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     public PingPongManager pingPongManager;
+
     Rigidbody ball;
 
     bool didTouchGround = false;
@@ -28,7 +29,7 @@ public class BallController : MonoBehaviour
     
 
     private void OnCollisionEnter(Collision collision)
-    {
+    { 
        if(collision.gameObject.name == "Terrain" && !didTouchGround)
         {
             didTouchGround = true;
@@ -44,20 +45,21 @@ public class BallController : MonoBehaviour
     IEnumerator resetBallPosition()
     {
         yield return new WaitForSeconds(2);
-        
+
+        didTouchGround = false;
+
         ball.velocity = Vector3.zero;
         ball.angularVelocity = Vector3.zero;
 
         if(lastPlayerHit == "P1_PingPongBat")
         {
             transform.localPosition = new Vector3(0.4f, -0.15f, -0.4f);
+            yield break;
         }
 
         if(lastPlayerHit == "P2_PingPongBat")
         {
             transform.localPosition = new Vector3(-1.8f, -0.15f, 0.9f);
         }
-
-        didTouchGround = false;
     }
 }

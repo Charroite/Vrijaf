@@ -5,6 +5,8 @@ using UnityEngine;
 public class BatController : MonoBehaviour
 {
     public PingPongManager pingPongManager;
+    string lastPlayerHit;
+
     Rigidbody bat;
 
     void Start()
