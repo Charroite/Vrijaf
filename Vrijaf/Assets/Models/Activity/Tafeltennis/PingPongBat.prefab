@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: -1438941936192046772}
   - component: {fileID: 4351770584770508041}
   - component: {fileID: -8295766799969448082}
+  - component: {fileID: -2883850916975447777}
   m_Layer: 0
   m_Name: PingPongBat
   m_TagString: PingPongBat
@@ -295,3 +296,15 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-2883850916975447777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8733148417151412701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e60ecc5ae2e2f4bae54c69b2dd9ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,6 +9,7 @@ public class BallAudioManager : MonoBehaviour
     public AudioClip hitDefaultSound;
     public AudioClip hitRacketSound;
 
+    bool isFirstColision = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +25,17 @@ public class BallAudioManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "PingPongBat")
+        if (isFirstColision)
+        {
+            isFirstColision = false;
+            return;
+        }
+
+        if (collision.gameObject.tag == "PingPongBat")
         {
             hitRacket.Play();
-        } 
+        }
+
         else{
             hitDefault.Play();
         }

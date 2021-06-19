@@ -6,11 +6,10 @@ public class TableController : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-
         // Check if game has started
-        if(collision.gameObject.name == "PingPongBall")
+        if (collision.gameObject.name == "PingPongBall")
         {
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
         }
     }
 }
