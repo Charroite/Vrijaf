@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6599469437153611915}
   - component: {fileID: 6599469437153611912}
   m_Layer: 0
-  m_Name: PingPongTable
+  m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
