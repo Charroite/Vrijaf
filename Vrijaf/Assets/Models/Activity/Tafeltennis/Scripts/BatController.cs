@@ -4,38 +4,61 @@ using UnityEngine;
 
 public class BatController : MonoBehaviour
 {
-    public PingPongManager pingPongManager;
-    string lastPlayerHit;
-
     Rigidbody bat;
+
+    public PingPongManager pingPongManager;
+    public BatController batOpponent;
+
+    bool isGrabbed;
+    bool didHitLast;
+    bool turnToServe;
 
     void Start()
     {
         bat = GetComponent<Rigidbody>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(bat.gameObject.name == "P1_PingPongBat")
-        {
-            pingPongManager.SetIsP1BatGrabbed(true);
-        }
-
-        if (bat.gameObject.name == "P2_PingPongBat")
-        {
-            pingPongManager.SetIsP2BatGrabbed(true);
-        }
+        isGrabbed = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (bat.gameObject.name == "P1_PingPongBat")
-        {
-            pingPongManager.SetIsP1BatGrabbed(false);
-        }
+        isGrabbed = false;  
+    }
 
-        if (bat.gameObject.name == "P2_PingPongBat")
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "PingPongBall" && !didHitLast)
         {
-            pingPongManager.SetIsP2BatGrabbed(false);
+            batOpponent.SetDidHitLast(false);
+            didHitLast = true;
         }
+    }
+
+    public bool GetIsGrabbed()
+    {
+        return isGrabbed;
+    }
+
+    public bool GetDidHitLast()
+    {
+        return didHitLast;
+    }
+
+    public void SetDidHitLast(bool boolean)
+    {
+        didHitLast = boolean;
+    }
+
+    public bool GetTurnToServe()
+    {
+        return turnToServe;
+    }
+
+    public void SetTurnToServe(bool boolean)
+    {
+        turnToServe = boolean;
     }
 }
