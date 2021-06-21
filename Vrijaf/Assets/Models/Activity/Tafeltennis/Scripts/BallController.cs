@@ -30,8 +30,7 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Execute when ball touches the ground
-        if (collision.gameObject.name == "Terrain" && !didTouchGround)
+        if (collision.gameObject.name != "P1_PingPongBat" && collision.gameObject.name != "P2_PingPongBat" && collision.gameObject.name != "PingPongTable" && !didTouchGround)
         {
             didTouchGround = true;
             StartCoroutine(ResetBallPosition());
