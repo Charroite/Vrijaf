@@ -128,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662285a5ded108247a9fb7fd6e351480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pingPongManager: {fileID: 0}
+  pingPongManager: {fileID: 9053725644281325863, guid: ead9e1e455fab37469781dc63ab408f3, type: 3}

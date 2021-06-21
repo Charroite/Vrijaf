@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1234ba673ba1255449f6149af87a849a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 0}
+  batP1: {fileID: 0}
+  batP2: {fileID: 0}
+  table: {fileID: 0}

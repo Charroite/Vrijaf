@@ -308,3 +308,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e60ecc5ae2e2f4bae54c69b2dd9ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pingPongManager: {fileID: 9053725644281325863, guid: ead9e1e455fab37469781dc63ab408f3, type: 3}
+  batOpponent: {fileID: 0}
