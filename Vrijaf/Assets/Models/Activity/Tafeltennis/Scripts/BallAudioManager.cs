@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BallAudioManager : MonoBehaviour
 {
-    public AudioSource hitDefault;
-    public AudioSource hitRacket;
     public AudioClip hitDefaultSound;
     public AudioClip hitRacketSound;
-
+    AudioSource hitDefault;
+    AudioSource hitRacket;
+    
     bool isFirstColision = true;
-    // Start is called before the first frame update
+
     void Start()
     {
         hitDefault = gameObject.AddComponent<AudioSource>();
@@ -31,7 +31,7 @@ public class BallAudioManager : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.tag == "PingPongBat")
+        if (collision.gameObject.CompareTag("PingPongBat"))
         {
             hitRacket.Play();
         }

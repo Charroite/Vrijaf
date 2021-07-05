@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    public PingPongManager manager;
+
     Rigidbody ball;
-
-    public PingPongManager pingPongManager;
-
+    List<string> collisionsToIgnore;
+    
     bool isBallGrabbed;
     bool didTouchGround;
 
     void Start()
-    { 
+    {
         ball = GetComponent<Rigidbody>();
+
+        collisionsToIgnore = new List<string>() { "P1_PingPongBat", "P2_PingPongBat", "PingPongTable" };
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,14 +29,15 @@ public class BallController : MonoBehaviour
         isBallGrabbed = false;
     }
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name != "P1_PingPongBat" && collision.gameObject.name != "P2_PingPongBat" && collision.gameObject.name != "PingPongTable" && !didTouchGround)
+        if (!didTouchGround)
         {
-            didTouchGround = true;
-            StartCoroutine(ResetBallPosition());
+            if (!collisionsToIgnore.Contains(collision.gameObject.name))
+            {
+                didTouchGround = true;
+                StartCoroutine(ResetBallPosition());
+            }
         }
     }
 
@@ -46,7 +50,7 @@ public class BallController : MonoBehaviour
         ball.velocity = Vector3.zero;
         ball.angularVelocity = Vector3.zero;
 
-        pingPongManager.ProcessGameScore();
+        manager.ProcessGameScore();
     }
 
     public bool GetIsBallGrabbed()

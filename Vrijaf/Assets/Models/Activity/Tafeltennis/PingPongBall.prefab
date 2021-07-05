@@ -274,8 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34be0b34b3822dc42a390b7234636a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDefault: {fileID: 0}
-  hitRacket: {fileID: 0}
   hitDefaultSound: {fileID: 8300000, guid: f40ed9afef5dac043b5707dc4918dee3, type: 3}
   hitRacketSound: {fileID: 8300000, guid: d86fb03f8c3785e469d406759f72ebe7, type: 3}
 --- !u!114 &8626520687940254058
@@ -290,4 +288,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca15052a1c483d4cb7337189d3b5331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pingPongManager: {fileID: 9053725644281325863, guid: ead9e1e455fab37469781dc63ab408f3, type: 3}
+  manager: {fileID: 0}

@@ -1,22 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BatController : MonoBehaviour
 {
-    Rigidbody bat;
-
-    public PingPongManager pingPongManager;
     public BatController batOpponent;
 
     bool isGrabbed;
     bool didHitLast;
     bool turnToServe;
-
-    void Start()
-    {
-        bat = GetComponent<Rigidbody>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {

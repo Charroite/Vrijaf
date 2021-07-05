@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class PingPongManager : MonoBehaviour
 {
-    bool isGameActive;
-    bool isRallyActive;
-
     public BallController ball;
     public BatController batP1;
     public BatController batP2;
     public TableController table;
 
+    bool isGameActive;
+    bool isRallyActive;
+
     int matchCount;
     int serveCount = 1;
     float[] gameScore = new float[] { 0, 0 };
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //Debug.Log(ball.getIsBallGrabbed());
     }
-    
+
+    public void ProcessGameScore()
+    {
+        if (serveCount == 2)
+        {
+            ChangeServeTurn();
+            serveCount = 0;
+        }
+
+        ResetBallPosition();
+
+        serveCount++;
+    }
+
     private void ChangeServeTurn()
     {
         if (batP2.GetTurnToServe())
@@ -45,23 +51,11 @@ public class PingPongManager : MonoBehaviour
     {
         if (batP2.GetTurnToServe())
         {
-            ball.transform.localPosition = new Vector3(0.4f, -0.15f, -0.4f);
+            ball.transform.localPosition = new Vector3(0.05f, -0.15f, -0.2f);
             return;
         }
 
-        ball.transform.localPosition = new Vector3(-1.8f, -0.15f, 0.9f);
+        ball.transform.localPosition = new Vector3(-1.5f, -0.5f, 0.7f);
     }
 
-    public void ProcessGameScore()
-    {
-        if (serveCount == 2)
-        {
-            ChangeServeTurn();
-            serveCount = 0;
-        }
-
-        ResetBallPosition();
-
-        serveCount++;
-    }
 }

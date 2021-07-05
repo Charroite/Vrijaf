@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class TableController : MonoBehaviour
 {
-    public PingPongManager pingPongManager;
-
-    bool didBallHitTable;
-
-    Rigidbody table;
-    private void OnCollisionEnter(Collision collision)
+    // Start is called before the first frame update
+    void Start()
     {
-        // Check if game has started
-        if (collision.gameObject.name == "PingPongBall")
-        {
-            //Debug.Log(collision.gameObject.name);
-        }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
